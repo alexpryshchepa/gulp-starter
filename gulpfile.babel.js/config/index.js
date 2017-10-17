@@ -1,10 +1,11 @@
 const tasks = {
   browserSync: true,
   clean: true,
+  html: true,
   pug: true,
   sass: true,
   scripts: true,
-  react: false,
+  react: true,
   images: true,
   ftp: true,
   watch: true,
@@ -21,6 +22,11 @@ const paths = {
   src: 'src',
   dist: 'dist',
 
+  html: {
+    src: '/*.html',
+    dist: './'
+  },
+  
   pug: {
     src: '/*.pug',
     dist: './'
