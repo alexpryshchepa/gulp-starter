@@ -11,3 +11,4 @@
 
 [Config file](gulpfile.babel.js/config/index.js) - you can define tasks that you need by true / false, ftp credentials and paths to files
 * If you deactivate some tasks be shure you delete them in dev / build / deploy tasks
+* Do not forget specify files in watch task
