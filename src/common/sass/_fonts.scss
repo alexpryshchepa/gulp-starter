@@ -1,0 +1,64 @@
+$font-family-base: 'Verdana', sans-serif;
+
+$font-size-base: 16px;
+
+$font-color-base: #fff;
+$font-color-base-dark: #000;
+
+$font-weight-regular: 400;
+$font-weight-base: $font-weight-regular;
+
+$font-line-height-base: 1;
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: $font-color-base;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $font-line-height-base;
+}
+
+input,
+textarea,
+button,
+select {
+  color: $font-color-base;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+}
+
+input,
+textarea {
+  &::-webkit-input-placeholder {
+    color: $font-color-base;
+  }
+  &::-moz-placeholder {
+    color: $font-color-base;
+  }
+  &:-moz-placeholder {
+    color: $font-color-base;
+  }
+  &:-ms-input-placeholder {
+    color: $font-color-base;
+  }
+  &:focus {
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
