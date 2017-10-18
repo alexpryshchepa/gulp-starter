@@ -7,6 +7,7 @@ const tasks = {
   scripts: true,
   react: true,
   images: true,
+  move: true,
   ftp: true,
   watch: true,
   sasslint: true,
