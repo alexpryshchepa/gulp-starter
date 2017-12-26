@@ -1,0 +1,26 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-alert": 1,
+    "no-console": 1,
+    "camelcase": 1,
+    "curly": 1,
+    "no-eq-null": 0,
+    "no-empty": 1,
+    "no-use-before-define": 1,
+    "no-unused-vars": [
+      "error", {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "no-extra-semi": 1,
+    "no-debugger": 1,
+    "semi": 1,
+    "quotes": 0
+  }
+}

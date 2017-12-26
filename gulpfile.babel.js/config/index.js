@@ -23,29 +23,31 @@ const paths = {
   src: 'src',
   dist: 'dist',
 
+  // Choose html 
   html: {
     src: '/*.html',
-    dist: './'
+    dist: './',
   },
   
+  // or pug
   pug: {
     src: '/*.pug',
-    dist: './'
+    dist: './',
   },
 
   stylesheets: {
     src: 'index.scss',
-    dist: 'assets/css'
+    dist: 'assets/css',
   },
 
   javascripts: {
     src: 'index.js',
-    dist: 'assets/js'
+    dist: 'assets/js',
   },
 
   images: {
     src: '/images/**/*',
-    dist: 'assets/img'
+    dist: 'assets/img',
   }
 }
 
@@ -53,7 +55,7 @@ const ftps = {
   host: 'host',
   user: 'user',
   password: 'password',
-  folder: 'folder'
+  folder: 'folder',
 }
 
 module.exports = {
