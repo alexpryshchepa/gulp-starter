@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if'
 import uglify from 'gulp-uglify'
+import sourcemaps from 'gulp-sourcemaps';
 import path from 'path';
 import babelify from 'babelify';
 import browserSync from 'browser-sync';
@@ -20,6 +21,7 @@ export default gulp.task('scripts', () => {
   return browserify({
     entries: path.join(paths.src, paths.javascripts.src),
     paths: [paths.src],
+    debug: true,
   })
     .transform('babelify', { presets: ['env'] })
     .bundle()
@@ -33,7 +35,10 @@ export default gulp.task('scripts', () => {
       }
     }))
     .pipe(vinylSourceStream('index.js'))
-    .pipe(gulpIf(flag.prod, vinylBuffer()))
+    .pipe(vinylBuffer())
+    .pipe(sourcemaps.init({
+      loadMaps: true
+    }))
     .pipe(gulpIf(flag.prod, uglify()))
     .pipe(gulp.dest(path.join(paths.dist, paths.javascripts.dist)))
     .pipe(browserSync.reload({
