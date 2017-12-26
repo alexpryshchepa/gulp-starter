@@ -5,7 +5,6 @@ const tasks = {
   pug: true,
   sass: true,
   scripts: true,
-  react: true,
   images: true,
   move: true,
   ftp: true,
