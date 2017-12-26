@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import path from 'path';
 import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 import cssnano from 'gulp-cssnano';
 import browserSync from 'browser-sync';
 import autoprefixer from 'gulp-autoprefixer';
@@ -25,6 +26,7 @@ export default gulp.task('sass', () => {
         this.emit('end');
       }
     }))
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer(['last 20 versions', '> 0.1%'], {
       cascade: true
@@ -32,6 +34,7 @@ export default gulp.task('sass', () => {
     .pipe(gulpIf(flag.prod, cssnano({
       zIndex: false
     })))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.join(paths.dist, paths.stylesheets.dist)))
     .pipe(browserSync.reload({
       stream: true

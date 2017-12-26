@@ -17,7 +17,10 @@ import {
 var flag = yargs.argv;
 
 export default gulp.task('scripts', () => {
-  return browserify(path.join(paths.src, paths.javascripts.src))
+  return browserify({
+    entries: path.join(paths.src, paths.javascripts.src),
+    paths: [paths.src],
+  })
     .transform('babelify', { presets: ['env'] })
     .bundle()
     .pipe(plumber({
