@@ -10,7 +10,7 @@ import {
 var flag = yargs.argv;
 
 export default gulp.task('images', () => {
-  return gulp.src(path.join(paths.src, paths.images.src))
+  return gulp.src(path.resolve(paths.src, paths.images.src))
     .pipe(gulpIf(flag.prod, image({
       pngquant: true,
       optipng: false,
@@ -22,5 +22,5 @@ export default gulp.task('images', () => {
       svgo: true,
       concurrent: 10
     })))
-    .pipe(gulp.dest(path.join(paths.dist, paths.images.dist)));
+    .pipe(gulp.dest(path.resolve(paths.dist, paths.images.dist)));
 });

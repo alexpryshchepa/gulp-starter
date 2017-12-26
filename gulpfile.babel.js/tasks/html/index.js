@@ -8,7 +8,7 @@ import {
 } from '../../config';
 
 export default gulp.task('html', () => {
-  return gulp.src(path.join(paths.src, paths.html.src))
+  return gulp.src(path.resolve(paths.src, paths.html.src))
     .pipe(plumber({
       errorHandler: function (err) {
         notify.onError({
@@ -18,7 +18,7 @@ export default gulp.task('html', () => {
         this.emit('end');
       }
     }))
-    .pipe(gulp.dest(path.join(paths.dist, paths.html.dist)))
+    .pipe(gulp.dest(path.resolve(paths.dist, paths.html.dist)))
     .pipe(browserSync.reload({
       stream: true
     }));

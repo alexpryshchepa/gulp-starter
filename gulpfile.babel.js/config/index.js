@@ -24,14 +24,14 @@ const paths = {
 
   // Choose html 
   html: {
-    src: '/*.html',
-    dist: './',
+    src: '*.html',
+    dist: '',
   },
   
   // or pug
   pug: {
-    src: '/*.pug',
-    dist: './',
+    src: '*.pug',
+    dist: '',
   },
 
   stylesheets: {
@@ -45,7 +45,7 @@ const paths = {
   },
 
   images: {
-    src: '/images/**/*',
+    src: 'images/**/*',
     dist: 'assets/img',
   }
 }

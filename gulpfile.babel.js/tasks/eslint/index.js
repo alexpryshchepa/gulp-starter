@@ -6,7 +6,7 @@ import {
 } from '../../config';
 
 export default gulp.task('eslint', () => {
-  return gulp.src([path.join(paths.src, '/**/*.js'), '!src/libs/**'])
+  return gulp.src([path.resolve(paths.src, '/**/*.js'), '!src/libs/**'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());

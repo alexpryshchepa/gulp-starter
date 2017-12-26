@@ -15,7 +15,7 @@ export default gulp.task('ftp', () => {
     password: ftps.password
   });
 
-  return gulp.src(path.join(paths.dist, '/**'), {
+  return gulp.src(path.resolve(paths.dist, '/**'), {
       base: paths.dist,
       buffer: false
     })

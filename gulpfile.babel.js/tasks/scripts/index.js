@@ -3,11 +3,11 @@ import gulpIf from 'gulp-if'
 import uglify from 'gulp-uglify'
 import sourcemaps from 'gulp-sourcemaps';
 import path from 'path';
+import browserify from 'browserify';
 import babelify from 'babelify';
 import browserSync from 'browser-sync';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import browserify from 'browserify';
 import vinylSourceStream from 'vinyl-source-stream';
 import vinylBuffer from 'vinyl-buffer';
 import yargs from 'yargs';
@@ -19,7 +19,7 @@ var flag = yargs.argv;
 
 export default gulp.task('scripts', () => {
   return browserify({
-    entries: path.join(paths.src, paths.javascripts.src),
+    entries: path.resolve(paths.src, paths.javascripts.src),
     paths: [paths.src],
     debug: true,
   })
@@ -40,7 +40,8 @@ export default gulp.task('scripts', () => {
       loadMaps: true
     }))
     .pipe(gulpIf(flag.prod, uglify()))
-    .pipe(gulp.dest(path.join(paths.dist, paths.javascripts.dist)))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(path.resolve(paths.dist, paths.javascripts.dist)))
     .pipe(browserSync.reload({
       stream: true
     }));

@@ -16,7 +16,7 @@ import {
 var flag = yargs.argv;
 
 export default gulp.task('sass', () => {
-  return gulp.src(path.join(paths.src, paths.stylesheets.src))
+  return gulp.src(path.resolve(paths.src, paths.stylesheets.src))
     .pipe(plumber({
       errorHandler: function (err) {
         notify.onError({
@@ -35,7 +35,7 @@ export default gulp.task('sass', () => {
       zIndex: false
     })))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(path.join(paths.dist, paths.stylesheets.dist)))
+    .pipe(gulp.dest(path.resolve(paths.dist, paths.stylesheets.dist)))
     .pipe(browserSync.reload({
       stream: true
     }));

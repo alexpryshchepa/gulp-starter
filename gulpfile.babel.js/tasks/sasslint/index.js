@@ -6,7 +6,7 @@ import {
 } from '../../config';
 
 export default gulp.task('sasslint', () => {
-  return gulp.src(path.join(paths.src, '/**/*.s+(a|c)ss'))
+  return gulp.src(path.resolve(paths.src, '/**/*.s+(a|c)ss'))
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())

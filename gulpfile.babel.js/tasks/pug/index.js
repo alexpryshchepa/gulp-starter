@@ -13,7 +13,7 @@ import {
 var flag = yargs.argv;
 
 export default gulp.task('pug', () => {
-  return gulp.src(path.join(paths.src, paths.pug.src))
+  return gulp.src(path.resolve(paths.src, paths.pug.src))
     .pipe(plumber({
       errorHandler: function (err) {
         notify.onError({
@@ -24,8 +24,8 @@ export default gulp.task('pug', () => {
       }
     }))
     .pipe(pug())
-    .pipe(gulp.dest(path.join(paths.dist, paths.pug.dist)))
+    .pipe(gulp.dest(path.resolve(paths.dist, paths.pug.dist)))
     .pipe(browserSync.reload({
-      stream: true
+      stream: true,
     }));
 });
