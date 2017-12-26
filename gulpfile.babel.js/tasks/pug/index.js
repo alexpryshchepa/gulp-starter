@@ -23,9 +23,7 @@ export default gulp.task('pug', () => {
         this.emit('end');
       }
     }))
-    .pipe(pug({
-      pretty: true
-    }))
+    .pipe(pug())
     .pipe(gulp.dest(path.join(paths.dist, paths.pug.dist)))
     .pipe(browserSync.reload({
       stream: true
