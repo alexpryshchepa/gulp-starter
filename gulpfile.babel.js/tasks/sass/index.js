@@ -9,9 +9,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import yargs from 'yargs';
-import {
-  paths
-} from '../../config';
+import { paths } from '../../config';
 
 var flag = yargs.argv;
 

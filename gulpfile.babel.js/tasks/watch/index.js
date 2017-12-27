@@ -1,9 +1,6 @@
 import gulp from 'gulp';
 import path from 'path';
-import browserSync from 'browser-sync';
-import {
-  paths
-} from '../../config';
+import { paths } from '../../config';
 
 export default gulp.task('watch', () => {
   gulp.watch(path.resolve(paths.src, '**/*.html'), gulp.series('html'));

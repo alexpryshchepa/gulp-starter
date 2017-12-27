@@ -1,8 +1,8 @@
-import gulp from 'gulp'
+import gulp from 'gulp';
 import path from 'path';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import ftp from 'vinyl-ftp'
+import ftp from 'vinyl-ftp';
 import {
   paths,
   ftps,

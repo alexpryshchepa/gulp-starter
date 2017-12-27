@@ -1,9 +1,7 @@
 import gulp from 'gulp';
 import path from 'path';
 import eslint from 'gulp-eslint';
-import {
-  paths
-} from '../../config';
+import { paths } from '../../config';
 
 export default gulp.task('eslint', () => {
   return gulp.src([path.resolve(paths.src, '/**/*.js'), '!src/libs/**'])

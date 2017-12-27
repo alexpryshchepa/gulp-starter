@@ -3,9 +3,7 @@ import path from 'path';
 import browserSync from 'browser-sync';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import {
-  paths
-} from '../../config';
+import { paths } from '../../config';
 
 export default gulp.task('html', () => {
   return gulp.src(path.resolve(paths.src, paths.html.src))

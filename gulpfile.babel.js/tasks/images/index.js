@@ -1,11 +1,9 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
-import image from 'gulp-image'
+import image from 'gulp-image';
 import path from 'path';
 import yargs from 'yargs';
-import {
-  paths
-} from '../../config';
+import { paths } from '../../config';
 
 var flag = yargs.argv;
 
