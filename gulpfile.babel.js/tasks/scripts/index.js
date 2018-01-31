@@ -5,7 +5,6 @@ import sourcemaps from 'gulp-sourcemaps';
 import path from 'path';
 import browserify from 'browserify';
 import browserSync from 'browser-sync';
-import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import vinylSourceStream from 'vinyl-source-stream';
 import vinylBuffer from 'vinyl-buffer';
@@ -24,24 +23,22 @@ export default gulp.task('scripts', () => {
   })
     .transform('babelify', { presets: ['env'] })
     .bundle()
-    .pipe(plumber({
-      errorHandler: function (err) {
-        notify.onError({
-          title: "Gulp error in " + err.plugin,
-          message: err.toString()
-        })(err);
-        this.emit('end');
-      }
-    }))
+    .on('error', function (error) {
+      notify.onError({
+        title: "Gulp error in " + error.plugin,
+        message: error.toString()
+      })(error);
+      this.emit('end');
+    })
     .pipe(vinylSourceStream('index.js'))
     .pipe(vinylBuffer())
     .pipe(sourcemaps.init({
-      loadMaps: true
+      loadMaps: true,
     }))
     .pipe(gulpIf(flag.prod, uglify()))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.resolve(paths.dist, paths.javascripts.dist)))
     .pipe(browserSync.reload({
-      stream: true
+      stream: true,
     }));
 });

@@ -16,11 +16,11 @@ const tasks = {
   build: true,
   deploy: true,
   default: true,
-}
+};
 
 const paths = {
-  src: 'src',
-  dist: 'dist',
+  src: './src',
+  dist: './dist',
 
   // Choose html 
   html: {
@@ -48,14 +48,14 @@ const paths = {
     src: 'images/**/*',
     dist: 'assets/img',
   }
-}
+};
 
 const ftps = {
   host: 'host',
   user: 'user',
   password: 'password',
   folder: 'folder',
-}
+};
 
 module.exports = {
   tasks: tasks,

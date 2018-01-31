@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import path from 'path';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import ftp from 'vinyl-ftp';
@@ -15,7 +14,7 @@ export default gulp.task('ftp', () => {
     password: ftps.password
   });
 
-  return gulp.src(path.resolve(paths.dist, '/**'), {
+  return gulp.src(`${paths.dist}/**`, {
       base: paths.dist,
       buffer: false
     })
