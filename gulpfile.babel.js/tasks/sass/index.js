@@ -24,7 +24,7 @@ export default gulp.task('sass', () => {
         this.emit('end');
       }
     }))
-    .pipe(sourcemaps.init())
+    .pipe(gulpIf(!flag.prod, sourcemaps.init()))
     .pipe(sass())
     .pipe(autoprefixer(['last 20 versions', '> 0.1%'], {
       cascade: true
@@ -32,7 +32,7 @@ export default gulp.task('sass', () => {
     .pipe(gulpIf(flag.prod, cssnano({
       zIndex: false
     })))
-    .pipe(sourcemaps.write())
+    .pipe(gulpIf(!flag.prod, sourcemaps.write()))
     .pipe(gulp.dest(path.resolve(paths.dist, paths.stylesheets.dist)))
     .pipe(browserSync.reload({
       stream: true

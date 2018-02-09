@@ -19,7 +19,7 @@ export default gulp.task('scripts', () => {
   return browserify({
     entries: path.resolve(paths.src, paths.javascripts.src),
     paths: [paths.src],
-    debug: true,
+    debug: !flag.prod,
   })
     .transform('babelify', { presets: ['env'] })
     .bundle()
@@ -36,7 +36,7 @@ export default gulp.task('scripts', () => {
       loadMaps: true,
     }))
     .pipe(gulpIf(flag.prod, uglify()))
-    .pipe(sourcemaps.write())
+    .pipe(gulpIf(!flag.prod, sourcemaps.write()))
     .pipe(gulp.dest(path.resolve(paths.dist, paths.javascripts.dist)))
     .pipe(browserSync.reload({
       stream: true,
