@@ -1,0 +1,80 @@
+// sass-lint:disable no-vendor-prefixes
+html {
+  direction: ltr;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  color: $color-black;
+  font-family: 'MuseoSansCyrl', 'Helvetica', 'Arial';
+  font-display: swap;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: 1.5;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  margin: 0;
+}
+
+input,
+textarea,
+button,
+select {
+  color: $color-black;
+  font-family: $font-family-base;
+  font-display: swap;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  border-radius: 0;
+  box-shadow: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+input,
+textarea {
+  &::-ms-clear {
+    display: none;
+  }
+  &::-webkit-input-placeholder {
+    color: $color-black;
+  }
+  &::-moz-placeholder {
+    color: $color-black;
+  }
+  &:-moz-placeholder {
+    color: $color-black;
+  }
+  &:-ms-input-placeholder {
+    color: $color-black;
+  }
+  &:focus {
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  overflow-y: auto;
+}
+
+a {
+  text-decoration: none;
+}

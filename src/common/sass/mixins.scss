@@ -1,0 +1,33 @@
+// Responsive
+@mixin mobile {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+// Hidden
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+// Visible
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+// Background image
+@mixin bgimage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

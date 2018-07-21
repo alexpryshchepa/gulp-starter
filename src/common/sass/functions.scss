@@ -1,0 +1,21 @@
+// Default transition
+@function tn($rules...) {
+  $base: .2s ease-out;
+  $transition: ();
+  @each $rule in $rules {
+    $transition: append($transition, join($rule, $base), 'comma');
+  }
+  @return $transition;
+}
+
+// px to vw
+@function vw($target) {
+  $vw-context: (1920 * 0.01) * 1;
+  @return ($target / $vw-context) * 1vw;
+}
+
+// px to vh
+@function vh($target) {
+  $vw-context: (1080 * 0.01) * 1;
+  @return ($target / $vw-context) * 1vh;
+}

@@ -1,9 +1,10 @@
-// Libs
+@import 'common/sass/variables';
+@import 'common/sass/mixins';
+@import 'common/sass/functions';
 
 // Common
-@import 'common/sass/mixins';
-@import 'common/sass/reset';
 @import 'common/sass/fonts';
-@import 'common/sass/colors';
+@import 'common/sass/normalize';
+@import 'common/sass/global';
 
 // Components
