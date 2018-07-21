@@ -7,6 +7,7 @@ export default gulp.task('browser-sync', function () {
     server: {
       baseDir: paths.dist
     },
-    notify: false
+    notify: false,
+    reloadThrottle: 2000,
   });
 });
