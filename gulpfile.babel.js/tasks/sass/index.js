@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
+import cached from 'gulp-cached';
 import path from 'path';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import cssnano from 'gulp-cssnano';
-import browserSync from 'browser-sync';
 import autoprefixer from 'gulp-autoprefixer';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
@@ -28,6 +28,7 @@ export default gulp.task('sass', (done) => {
           this.emit('end');
         }
       }))
+      .pipe(cached('styling'))
       .pipe(gulpIf(!flag.prod, sourcemaps.init()))
       .pipe(sass())
       .pipe(autoprefixer(['last 20 versions', '> 0.1%'], {
@@ -37,10 +38,7 @@ export default gulp.task('sass', (done) => {
         zIndex: false
       })))
       .pipe(gulpIf(!flag.prod, sourcemaps.write()))
-      .pipe(gulp.dest(path.resolve(paths.dist, paths.stylesheets.dist)))
-      .pipe(browserSync.reload({
-        stream: true
-      }));
+      .pipe(gulp.dest(path.resolve(paths.dist, paths.stylesheets.dist)));
   };
 
   if (Array.isArray(paths.stylesheets.src)) {

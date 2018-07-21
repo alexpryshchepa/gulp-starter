@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import path from 'path';
 import pug from 'gulp-pug';
-import browserSync from 'browser-sync';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import { paths } from '../../config';
@@ -18,8 +17,5 @@ export default gulp.task('pug', () => {
       }
     }))
     .pipe(pug())
-    .pipe(gulp.dest(path.resolve(paths.dist, paths.pug.dist)))
-    .pipe(browserSync.reload({
-      stream: true,
-    }));
+    .pipe(gulp.dest(path.resolve(paths.dist, paths.pug.dist)));
 });

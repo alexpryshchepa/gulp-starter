@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import path from 'path';
-import browserSync from 'browser-sync';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import { paths } from '../../config';
@@ -16,8 +15,5 @@ export default gulp.task('html', () => {
         this.emit('end');
       }
     }))
-    .pipe(gulp.dest(path.resolve(paths.dist, paths.html.dist)))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+    .pipe(gulp.dest(path.resolve(paths.dist, paths.html.dist)));
 });

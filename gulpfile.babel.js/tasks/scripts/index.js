@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import uglify from 'gulp-uglify';
+import cached from 'gulp-cached';
 import sourcemaps from 'gulp-sourcemaps';
 import path from 'path';
 import browserify from 'browserify';
-import browserSync from 'browser-sync';
 import notify from 'gulp-notify';
 import vinylSourceStream from 'vinyl-source-stream';
 import vinylBuffer from 'vinyl-buffer';
@@ -36,15 +36,13 @@ export default gulp.task('scripts', (done) => {
       })
       .pipe(vinylSourceStream(filename))
       .pipe(vinylBuffer())
+      .pipe(cached('scripting'))
       .pipe(sourcemaps.init({
         loadMaps: true,
       }))
       .pipe(gulpIf(flag.prod, uglify()))
       .pipe(gulpIf(!flag.prod, sourcemaps.write()))
-      .pipe(gulp.dest(path.resolve(paths.dist, paths.javascripts.dist)))
-      .pipe(browserSync.reload({
-        stream: true,
-      }));
+      .pipe(gulp.dest(path.resolve(paths.dist, paths.javascripts.dist)));
   };
 
   if (Array.isArray(paths.javascripts.src)) {
