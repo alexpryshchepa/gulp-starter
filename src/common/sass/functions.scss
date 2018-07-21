@@ -10,12 +10,12 @@
 
 // px to vw
 @function vw($target) {
-  $vw-context: (1920 * 0.01) * 1;
+  $vw-context: (1920 * .01) * 1;
   @return ($target / $vw-context) * 1vw;
 }
 
 // px to vh
 @function vh($target) {
-  $vw-context: (1080 * 0.01) * 1;
+  $vw-context: (1080 * .01) * 1;
   @return ($target / $vw-context) * 1vh;
 }

@@ -45,7 +45,7 @@ export default gulp.task('scripts', (done) => {
       .pipe(browserSync.reload({
         stream: true,
       }));
-  }
+  };
 
   if (Array.isArray(paths.javascripts.src)) {
     const entries = paths.javascripts.src.map(path => `${paths.src}/${path}`);
