@@ -35,12 +35,12 @@ const paths = {
   },
 
   stylesheets: {
-    src: 'index.scss',
+    src: 'index.scss', // ['index.scss', 'test.scss'] - multiple entry points
     dist: 'assets/css',
   },
 
   javascripts: {
-    src: 'index.js',
+    src: 'index.js', // ['index.js', 'test.js'] - multiple entry points
     dist: 'assets/js',
   },
 
