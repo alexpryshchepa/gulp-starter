@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
-import cached from 'gulp-cached';
 import path from 'path';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
@@ -28,7 +27,6 @@ export default gulp.task('sass', (done) => {
           this.emit('end');
         }
       }))
-      .pipe(cached('styling'))
       .pipe(gulpIf(!flag.prod, sourcemaps.init()))
       .pipe(sass())
       .pipe(autoprefixer(['last 20 versions', '> 0.1%'], {

@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import uglify from 'gulp-uglify';
-import cached from 'gulp-cached';
 import sourcemaps from 'gulp-sourcemaps';
 import path from 'path';
 import browserify from 'browserify';
@@ -36,7 +35,6 @@ export default gulp.task('scripts', (done) => {
       })
       .pipe(vinylSourceStream(filename))
       .pipe(vinylBuffer())
-      .pipe(cached('scripting'))
       .pipe(sourcemaps.init({
         loadMaps: true,
       }))
