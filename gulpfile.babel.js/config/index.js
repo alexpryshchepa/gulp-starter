@@ -1,8 +1,9 @@
 const tasks = {
   browserSync: true,
   clean: true,
-  html: true,
-  pug: true,
+  html: false, /* Not include html task */
+  pug: false, /* Not include pug task */
+  ejs: true,
   sass: true,
   scripts: true,
   images: true,
@@ -21,26 +22,29 @@ const tasks = {
 const paths = {
   src: './src',
   dist: './dist',
+ 
+//  html: {
+//    src: '*.html',
+//    dist: '',
+//  },
+//
+//  pug: {
+//    src: '*.pug',
+//    dist: '',
+//  },
 
-  // Choose html 
-  html: {
-    src: '*.html',
-    dist: '',
-  },
-  
-  // or pug
-  pug: {
-    src: '*.pug',
+  ejs: {
+    src: '*.ejs',
     dist: '',
   },
 
   stylesheets: {
-    src: 'index.scss', // ['index.scss', 'test.scss'] - multiple entry points
+    src: 'index.scss', /* ['index.scss', 'test.scss'] - multiple entry points */
     dist: 'assets/css',
   },
 
   javascripts: {
-    src: 'index.js', // ['index.js', 'test.js'] - multiple entry points
+    src: 'index.js', /* ['index.js', 'test.js'] - multiple entry points */
     dist: 'assets/js',
   },
 
