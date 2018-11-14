@@ -28,7 +28,9 @@ export default gulp.task('sass', (done) => {
         }
       }))
       .pipe(gulpIf(!flag.prod, sourcemaps.init()))
-      .pipe(sass())
+      .pipe(sass({
+        includePaths: paths.src,
+      }))
       .pipe(autoprefixer(['last 20 versions', '> 0.1%'], {
         cascade: true
       }))
