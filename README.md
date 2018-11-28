@@ -1,65 +1,75 @@
-![Logo](http://static.daviann.com/daviann.png) 
-## Daviann gulp-starter
+## Gulp starter
 
 * __npm install__
-* __gulp__ - run dev environment
-* __gulp build__ - build, same as _gulp_ but without runing dev server
-* __gulp deploy__ - deploy to ftp server
-* __--prod__ - use flag to minify css / js / images and other differences from dev environment, ex. _gulp build --prod_
-* __gulp sasslint__ - sasslint, rules: 
+* __gulp__(gulp dev) - run dev environment
+* __gulp build__ - build project, same as _gulp dev_ but without running dev server
+* __gulp deploy__ - deploy project to ftp server
+* __--prod__ - use this flag to minify css / js, reduce images size and other differences for production, ex. _gulp build --prod_, _gulp deploy --prod_
+* __gulp sasslint__ - sasslint, [rules](.sass-lint.yml)
+* __gulp eslint__ - eslint, [rules](.eslintrc)
+
+[Config file](gulpfile.babel.js/config/index.js) - ftp credentials and paths to files.
+
+### Proposed technologies / approaches
+
+#### HTML
+* [EJS](https://ejs.co/#docs) template engine
+* [BEM](https://en.bem.info/methodology/html/)
+
+#### CSS
+* [SCSS](https://sass-lang.com/)
+* [BEM](https://en.bem.info/methodology/css/)
+* Properties order:
+  * Layout: The position of the element in space. Eg.: position, top, z-index.
+  * Box: The element itself. Eg.: display, overflow, box-sizing.
+  * Visual: Design of the element. Eg.: color, border, background.
+  * Type: Typesetting of the element. Eg.: font-family, text-transform.
+
+Code Sample:
 ```
-rules: 
-  no-extends: 1
-  no-trailing-whitespace: 0
-  empty-line-between-blocks: 0
-  class-name-format: 
-    - 1
-    -
-      convention: 'strictbem'
-  property-sort-order: 0
-  nesting-depth:
-    - 1
-    -
-      max-depth: 5
-  mixins-before-declarations:
-    - 1
-    -
-      exclude: ['tablet', 'mobile']
-  no-color-literals:
-    - 1
-    -
-      allow-rgba: true
-```
-* __gulp eslint__ - eslint, rules: 
-```
-{
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
-  "rules": {
-    "no-alert": 1,
-    "no-console": 1,
-    "camelcase": 1,
-    "curly": 1,
-    "no-eq-null": 0,
-    "no-empty": 1,
-    "no-use-before-define": 1,
-    "no-unused-vars": [
-      "error", {
-        "vars": "all",
-        "args": "after-used",
-        "ignoreRestSiblings": false
-      }
-    ],
-    "no-extra-semi": 1,
-    "no-debugger": 1,
-    "semi": 1,
-    "quotes": 0
+  .button {
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+    margin: 0 12px;
+    padding: 12px 24px;
+
+    background: #3f55aa;
+    border-radius: 5px;
+    border: 1px solid tomato;
+    color: tomato;
+    transition: background-color .3s ease-out;
+
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
   }
-}
 ```
 
-[Config file](gulpfile.babel.js/config/index.js) - you can define tasks that you need by true / false, ftp credentials and paths to files
-* If you deactivate some tasks be shure change them in dev / build / deploy tasks
-* Do not forget specify files in watch task
+#### JavaScript
+* ES6
+* [Browserify](http://browserify.org/) (CommonJS modules)
+
+#### File structure
+```
+  /* Global code, heplers, utils, etc. */
+  common/
+    ejs/
+    scss/
+    js/
+
+  /* Reusable components */
+  components/
+    Component/
+      Component.ejs
+      Component.scss
+      Component.js
+
+  /* Pages */
+  pages/
+    page/
+      page.ejs
+      page.scss
+      page.js
+```

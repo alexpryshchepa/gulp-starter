@@ -1,23 +1,3 @@
-const tasks = {
-  browserSync: true,
-  clean: true,
-  pug: false, /* Do not include pug task */
-  ejs: true,
-  sass: true,
-  scripts: true,
-  images: true,
-  move: true,
-  ftp: true,
-  watch: true,
-  sasslint: true,
-  eslint: true,
-  
-  dev: true,
-  build: true,
-  deploy: true,
-  default: true,
-};
-
 const paths = {
   src: './src',
   dist: './dist',
@@ -28,17 +8,20 @@ const paths = {
 //  },
 
   ejs: {
+    /* ['pages/index/index.ejs', 'pages/index/about.ejs'] - multiple entry points */
     src: 'pages/index/index.ejs',
     dist: '',
   },
 
   stylesheets: {
-    src: 'pages/index/index.scss', /* ['index.scss', 'test.scss'] - multiple entry points */
+    /* ['pages/index/index.scss', 'pages/index/about.scss'] - multiple entry points */
+    src: 'pages/index/index.scss',
     dist: 'assets/css',
   },
 
   javascripts: {
-    src: 'pages/index/index.js', /* ['index.js', 'test.js'] - multiple entry points */
+    /* ['pages/index/index.js', 'pages/index/about.js'] - multiple entry points */
+    src: 'pages/index/index.js',
     dist: 'assets/js',
   },
 
@@ -56,7 +39,6 @@ const ftps = {
 };
 
 module.exports = {
-  tasks: tasks,
-  paths: paths,
-  ftps: ftps,
+  paths,
+  ftps,
 };
