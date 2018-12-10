@@ -3,8 +3,8 @@ html {
   direction: ltr;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  color: $color-black;
-  font-family: 'MuseoSansCyrl', 'Helvetica', 'Arial';
+  color: #000;
+  font-family: $font-family-base;
   font-display: swap;
   font-size: 16px;
   font-weight: $font-weight-regular;
@@ -20,7 +20,7 @@ input,
 textarea,
 button,
 select {
-  color: $color-black;
+  color: #000;
   font-family: $font-family-base;
   font-display: swap;
   font-size: 16px;
@@ -39,16 +39,16 @@ textarea {
     display: none;
   }
   &::-webkit-input-placeholder {
-    color: $color-black;
+    color: #000;
   }
   &::-moz-placeholder {
-    color: $color-black;
+    color: #000;
   }
   &:-moz-placeholder {
-    color: $color-black;
+    color: #000;
   }
   &:-ms-input-placeholder {
-    color: $color-black;
+    color: #000;
   }
   &:focus {
     &::-webkit-input-placeholder {
