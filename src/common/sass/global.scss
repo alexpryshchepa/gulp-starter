@@ -1,9 +1,10 @@
-// sass-lint:disable no-vendor-prefixes
+// scss-lint:disable VendorPrefix
+
 html {
   direction: ltr;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  color: #000;
+  color: $color-dark;
   font-family: $font-family-base;
   font-display: swap;
   font-size: 16px;
@@ -20,7 +21,7 @@ input,
 textarea,
 button,
 select {
-  color: #000;
+  color: $color-dark;
   font-family: $font-family-base;
   font-display: swap;
   font-size: 16px;
@@ -38,28 +39,28 @@ textarea {
   &::-ms-clear {
     display: none;
   }
+
   &::-webkit-input-placeholder {
-    color: #000;
+    color: $color-dark;
   }
+
   &::-moz-placeholder {
-    color: #000;
+    color: $color-dark;
   }
-  &:-moz-placeholder {
-    color: #000;
-  }
+
   &:-ms-input-placeholder {
-    color: #000;
+    color: $color-dark;
   }
+
   &:focus {
     &::-webkit-input-placeholder {
       color: transparent;
     }
+
     &::-moz-placeholder {
       color: transparent;
     }
-    &:-moz-placeholder {
-      color: transparent;
-    }
+
     &:-ms-input-placeholder {
       color: transparent;
     }

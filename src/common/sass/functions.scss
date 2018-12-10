@@ -8,13 +8,13 @@
   @return $transition;
 }
 
-// px to vw
+// Convert px to vw
 @function vw($target) {
   $vw-context: (1920 * .01) * 1;
   @return ($target / $vw-context) * 1vw;
 }
 
-// px to vh
+// Convert px to vh
 @function vh($target) {
   $vw-context: (1080 * .01) * 1;
   @return ($target / $vw-context) * 1vh;

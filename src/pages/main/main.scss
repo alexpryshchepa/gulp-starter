@@ -1,8 +1,8 @@
 .p-main {
-  background-color: #232323;
+  background-color: $color-error;
 
   &__title {
     text-align: center;
-    color: #fff;
+    color: $color-success;
   }
 }
