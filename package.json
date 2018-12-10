@@ -1,11 +1,8 @@
 {
   "name": "daviann-gulp-starter",
-  "version": "0.0.1",
-  "description": "daviann agency gulp starter",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.0.0",
+  "description": "Gulp starter, all you need for static website coding. Includes live reload, SASS,  autoprefixer, EJS/PUG template engines, images reducing, JS/SASS linters, FTP deployment, JS bundling with browserify, ES2015+ ready, JS/CSS minification.",
+  "main": "gulpfile.babel.js",
   "author": "daviann/alexpryshchepa",
   "license": "ISC",
   "devDependencies": {
@@ -15,6 +12,9 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "event-stream": "3.3.4",
     "fs": "0.0.1-security",
     "gulp": "^4.0.0",
