@@ -5,8 +5,8 @@
 * __gulp build__ - build project, same as _gulp dev_ but without running dev server
 * __gulp deploy__ - deploy project to ftp server
 * __--prod__ - use this flag to minify css / js, reduce images size and other differences for production, ex. _gulp build --prod_, _gulp deploy --prod_
-* __gulp sasslint__ - sasslint, [rules](.sass-lint.yml)
-* __gulp eslint__ - eslint, [rules](.eslintrc)
+* __gulp sasslint__ - scsslint, [rules](.scss-lint.yml)
+* __gulp eslint__ - eslint, [rules](.eslintrc). You can use __--fix__ flag to [automatically fix problems](https://eslint.org/docs/rules/).
 
 [Config file](gulpfile.babel.js/config/index.js) - ftp credentials and paths to files.
 
@@ -73,3 +73,7 @@ Code Sample:
       page.scss
       page.js
 ```
+
+#### Linters
+* [SCSS-Lint](https://github.com/brigade/scss-lint), NOTE: You need to install Ruby.
+* [ESLint](https://github.com/eslint/eslint)
