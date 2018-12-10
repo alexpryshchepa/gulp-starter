@@ -34,6 +34,7 @@
     "gulp-scss-lint": "^0.7.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
+    "husky": "^1.2.0",
     "path": "^0.12.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-ftp": "^0.6.1",
@@ -42,5 +43,10 @@
   },
   "dependencies": {
     "browserify": "^16.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "gulp eslint && gulp scsslint"
+    }
   }
 }

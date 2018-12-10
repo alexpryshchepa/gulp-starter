@@ -12,5 +12,6 @@ export default gulp.task('eslint', () => {
       fix: flag.fix,
     }))
     .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
     .pipe(eslintIfFixed(paths.src));
 });

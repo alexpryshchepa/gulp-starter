@@ -11,6 +11,12 @@
   }
 }
 
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
 // Hidden
 @mixin hidden {
   opacity: 0;
@@ -30,4 +36,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+// Text overflow
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
