@@ -4,6 +4,7 @@ import pug from 'gulp-pug';
 import rename from 'gulp-rename';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
+import es from 'event-stream';
 import { paths } from '../../config';
 
 export default gulp.task('pug', () => {

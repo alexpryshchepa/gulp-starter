@@ -4,6 +4,7 @@ import ejs from 'gulp-ejs';
 import rename from 'gulp-rename';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
+import es from 'event-stream';
 import { paths } from '../../config';
 
 export default gulp.task('ejs', (done) => {
