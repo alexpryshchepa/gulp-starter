@@ -13,7 +13,7 @@ import {
   paths
 } from '../../config';
 
-var flag = yargs.argv;
+const flag = yargs.argv;
 
 export default gulp.task('sass', (done) => {
   const task = function (src) {
