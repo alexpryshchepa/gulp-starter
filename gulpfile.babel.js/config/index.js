@@ -3,25 +3,25 @@ const paths = {
   dist: './dist',
 
 //  pug: {
-//    src: 'pages/index/index.pug',
+//    src: 'pages/main/main.pug',
 //    dist: '',
 //  },
 
   ejs: {
     /* ['pages/index/index.ejs', 'pages/index/about.ejs'] - multiple entry points */
-    src: 'pages/index/index.ejs',
+    src: 'pages/main/main.ejs',
     dist: '',
   },
 
   stylesheets: {
     /* ['pages/index/index.scss', 'pages/index/about.scss'] - multiple entry points */
-    src: 'pages/index/index.scss',
+    src: 'index.scss',
     dist: 'assets/css',
   },
 
   javascripts: {
     /* ['pages/index/index.js', 'pages/index/about.js'] - multiple entry points */
-    src: 'pages/index/index.js',
+    src: 'index.js',
     dist: 'assets/js',
   },
 

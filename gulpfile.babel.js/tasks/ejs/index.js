@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import path from 'path';
 import ejs from 'gulp-ejs';
+import rename from 'gulp-rename';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import { paths } from '../../config';
@@ -18,6 +19,11 @@ export default gulp.task('ejs', (done) => {
         }
       }))
       .pipe(ejs({}, { root: paths.src }, { ext: '.html' }))
+      .pipe(rename(path => {
+        if (path.basename === 'main') {
+          path.basename = 'index';
+        }
+      }))
       .pipe(gulp.dest(path.resolve(paths.dist, paths.ejs.dist)));
   };
   
