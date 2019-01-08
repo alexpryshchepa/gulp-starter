@@ -13,7 +13,7 @@
 ### Proposed technologies / approaches
 
 #### HTML
-* [EJS](https://ejs.co/#docs) template engine
+* [NUNJUCKS](https://mozilla.github.io/nunjucks/templating.html) template engine. Optional: [EJS](https://ejs.co/#docs) or [PUG](https://pugjs.org/api/getting-started.html).
 * [BEM](https://en.bem.info/methodology/html/)
 
 #### CSS
@@ -55,21 +55,21 @@ Code Sample:
 ```
   /* Global code, heplers, utils, etc. */
   common/
-    ejs/
+    njk/
     scss/
     js/
 
   /* Reusable components */
   components/
     Component/
-      Component.ejs
+      Component.njk
       Component.scss
       Component.js
 
   /* Pages */
   pages/
     page/
-      page.ejs
+      page.njk
       page.scss
       page.js
 ```
