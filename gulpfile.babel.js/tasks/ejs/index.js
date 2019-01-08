@@ -7,6 +7,7 @@ import notify from 'gulp-notify';
 import es from 'event-stream';
 import { paths } from '../../config';
 
+// TODO: Need to properly log errors
 export default gulp.task('ejs', (done) => {
   const task = function (src) {
     return gulp.src(src)
