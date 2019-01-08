@@ -7,9 +7,15 @@ const paths = {
 //    dist: '',
 //  },
 
-  ejs: {
-    /* ['pages/index/index.ejs', 'pages/index/about.ejs'] - multiple entry points */
-    src: 'pages/main/main.ejs',
+//  ejs: {
+//    /* ['pages/index/index.ejs', 'pages/index/about.ejs'] - multiple entry points */
+//    src: 'pages/main/main.ejs',
+//    dist: '',
+//  },
+
+  nunjucks: {
+    /* ['pages/index/index.html', 'pages/index/about.html'] - multiple entry points */
+    src: 'pages/main/main.njk',
     dist: '',
   },
 
@@ -28,7 +34,7 @@ const paths = {
   images: {
     src: 'images/**/*',
     dist: 'assets/img',
-  }
+  },
 };
 
 const ftps = {

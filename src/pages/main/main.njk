@@ -1,0 +1,17 @@
+{% from 'common/njk/head.njk' import head %}
+{% from 'common/njk/scripts.njk' import scripts %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  {{ head('index', 'Main page') }}
+
+  <body class="p-main">
+    <main class="p-main__container">
+      <div data-docs></div>
+    </main>
+
+    {{ scripts('index') }}
+  </body>
+
+</html>

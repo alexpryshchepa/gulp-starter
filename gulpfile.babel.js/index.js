@@ -13,15 +13,16 @@ getDirectoriesNames(tasksDirectory).forEach(
 );
 
 gulp.task('watch', () => {
-  //  gulp.watch(`${paths.src}/**/*.pug`, gulp.series('pug')).on('change', browserSync.reload);
-  gulp.watch([`${paths.src}/**/*.ejs`, `${paths.src}/**/*.html`], gulp.series('ejs')).on('change', browserSync.reload);
+  // gulp.watch([`${paths.src}/**/*.pug`, `${paths.src}/**/*.html`], gulp.series('pug')).on('change', browserSync.reload);
+  // gulp.watch([`${paths.src}/**/*.ejs`, `${paths.src}/**/*.html`], gulp.series('ejs')).on('change', browserSync.reload);
+  gulp.watch([`${paths.src}/**/*.njk`, `${paths.src}/**/*.html`], gulp.series('nunjucks')).on('change', browserSync.reload);
   gulp.watch(`${paths.src}/**/*.scss`, gulp.series('sass')).on('change', browserSync.reload);
   gulp.watch(`${paths.src}/**/*.js`, gulp.series('scripts')).on('change', browserSync.reload);
   gulp.watch(`${paths.src}/images/**/*`, gulp.series('images')).on('change', browserSync.reload);
 });
 
-gulp.task('dev', gulp.series('clean', 'ejs', 'sass', 'scripts', 'images', gulp.parallel('browser-sync', 'watch')));
-gulp.task('build', gulp.series('clean', gulp.parallel('ejs', 'sass', 'scripts', 'images')));
-gulp.task('deploy', gulp.series('clean', gulp.parallel('ejs', 'sass', 'scripts', 'images'), 'ftp'));
+gulp.task('dev', gulp.series('clean', 'nunjucks', 'sass', 'scripts', 'images', gulp.parallel('browser-sync', 'watch')));
+gulp.task('build', gulp.series('clean', gulp.parallel('nunjucks', 'sass', 'scripts', 'images')));
+gulp.task('deploy', gulp.series('clean', gulp.parallel('nunjucks', 'sass', 'scripts', 'images'), 'ftp'));
 
 gulp.task('default', gulp.series('dev'));
