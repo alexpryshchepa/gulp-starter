@@ -17,6 +17,7 @@
 * [BEM](https://en.bem.info/methodology/html/)
 
 #### CSS
+* Choose between __reset.css__ and __normalize.css__
 * [SCSS](https://sass-lang.com/)
 * [BEM](https://en.bem.info/methodology/css/)
 * Properties order:
